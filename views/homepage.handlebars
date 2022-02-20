@@ -1,1 +1,14 @@
-<div>Is This Really It?</div>
+<ol class="post-list">
+  {{#each posts as |post|}}
+    <li>
+      <article class="post">
+        <div class="title">
+          <p>{{title}}</p>
+        </div>
+        <div class="text">
+          <p>{{post_text}} by {{user.username}} </p>
+        </div>
+      </article>
+    </li>
+  {{/each}}
+</ol>
