@@ -1,12 +1,17 @@
 <ol class="post-list">
   {{#each posts as |post|}}
-    <li>
+    <li class="post">
       <article class="post">
         <div class="title">
           <p>{{title}}</p>
         </div>
         <div class="text">
           <p>{{post_text}} by {{user.username}} </p>
+        </div>
+        <div>
+          {{#each post.comments}}
+            <p>{{comment_text}} by {{username}}</p>
+          {{/each}}
         </div>
       </article>
     </li>
