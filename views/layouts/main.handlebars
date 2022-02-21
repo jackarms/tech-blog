@@ -13,9 +13,12 @@
         <ul class="header">
           <li><a href="/" class="home">Jack's Highly Original Tech Blog</a></li>
           <li class="nav"><a href="/dashboard">Dashboard</a></li>
-          <li class="nav"><a href="/login">Login</a></li>
           <li class="nav"><a href="/signup">Signup</a></li>
-          <li class="nav"><button id="logout">logout</button></li>
+          {{#if loggedIn}}
+            <li class="nav"><button id="logout">logout</button></li>
+          {{else}}
+            <li class="nav"><a href="/login">Login</a></li>
+          {{/if}}
         </ul>
       </header>
       <main>
@@ -25,7 +28,9 @@
         <p>Come Again Soon???</p>
       </footer>
     </div>
-    <script src="/javascript/logout.js"></script>
+    {{#if loggedIn}}
+      <script src="/javascript/logout.js"></script>
+    {{/if}}
   </body>
 
 </html>
